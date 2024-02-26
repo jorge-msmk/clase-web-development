@@ -44,44 +44,56 @@ let gitHubNotes = {
 
 }
 
-console.log(Object.keys(gitHubNotes.elements));
-console.log(gitHubNotes.elements);
+// console.log(Object.keys(gitHubNotes.elements));
+// console.log(gitHubNotes.elements);
 
-const createElement = (element) => {
-    const elementCreated = document.createElement(element);
-    elementCreated.setAttribute('id', element);
-    console.log(elementCreated)
-    return elementCreated;
-};
+// const createElement = (element) => {
+//     const elementCreated = document.createElement(element);
+//     elementCreated.setAttribute('id', element);
+//     console.log(elementCreated)
+//     return elementCreated;
+// };
 
 // const main = document.getElementById("main");
-function generateHtmlElements(notes) {
-    const main = document.getElementsByClassName("main");
-    // console.log(main, 'main')
-    const elementsCreated = Object.keys(notes.elements).map((a) => {
-        return createElement(a);
-    });
-    elementsCreated.map(el => {
-        if(el.id === 'div') {
-            main.appendChild(el)
-        } else if ( el.id === "header" || "ul") {
-            const div = getElementById('div')
-            div.appendChild(el)
-        } else if ( el.id === "h3") {
-            const header = getElementById("header")
-            header.appendChild(el)
-        } else {
-            const ul = getElementById("ul")
-            ul.appendChild(el)
-        }
-        console.log(el.id)
-    });
-    // console.log(elementsCreated);
-}; 
+// function generateHtmlElements(notes) {
+//     const main = document.getElementsByClassName("main");
+//     // console.log(main, 'main')
+//     const elementsCreated = Object.keys(notes.elements).map((a) => {
+//         return createElement(a);
+//     });
+//     elementsCreated.map(el => {
+//         if(el.id === 'div') {
+//             main.appendChild(el)
+//         } else if ( el.id === "header" || "ul") {
+//             const div = getElementById('div')
+//             div.appendChild(el)
+//         } else if ( el.id === "h3") {
+//             const header = getElementById("header")
+//             header.appendChild(el)
+//         } else {
+//             const ul = getElementById("ul")
+//             ul.appendChild(el)
+//         }
+//         console.log(el.id)
+//     });
+//     // console.log(elementsCreated);
+// }; 
 
-generateHtmlElements(gitHubNotes);
+// generateHtmlElements(gitHubNotes);
 
 // const generateHtmlElements = () => {
 
 // }
 
+
+
+const main = document.createElement('main');
+const son = document.createElement('div');
+
+son.innerHTML = "<h1>Hello world<h1>";
+main.appendChild(son);
+
+document.body.appendChild(main);
+
+console.log(document.body);
+console.log(document.body.main);
