@@ -1,17 +1,7 @@
 
 
-
-let arrExp;
-const ArrExp2 = '';
-
-arrExp = ['hola', 'mundo'];
-
-console.log(arrExp);
-
-console.log(arrExp[0], ' ', arrExp[1])
-
 const GitHubCommands = ["git clone", "git status", "git fetch", "git pull", "git push"];
-const GitHubComandsDescription = {
+const GitHubCommandsDescription = {
     gitClone: "Clonamos el repositorio remoto debe ser el nuestro",
     gitStatus: "Muestra el estado del repositorio de trabajo",
     gitFetch: "Compara mi último commit con el de la rama remota",
@@ -26,98 +16,38 @@ const GitHubFunctionsDescription = {
     pullRequest: "solicitud de integración de mi rama a la master"
 };
 
-let gitHubNotes = {
-    date: new Date(),
-    title: "Apuntes de git hub",
-    elements: {
-        div: "div6666666",
-        header: "header",
-        h3: "h3",
-        ul: "ul",
-        li: "li"
-    },
-    class: [],
-    textElements: {
-        keys: [GitHubCommands, GitHubFunctions],
-        descriptions:[GitHubComandsDescription, GitHubFunctionsDescription]
-    }
-
-}
-
-// console.log(Object.keys(gitHubNotes.elements));
-// console.log(gitHubNotes.elements);
-
-// const createElement = (element) => {
-//     const elementCreated = document.createElement(element);
-//     elementCreated.setAttribute('id', element);
-//     console.log(elementCreated)
-//     return elementCreated;
-// };
-
-// const main = document.getElementById("main");
-// function generateHtmlElements(notes) {
-//     const main = document.getElementsByClassName("main");
-//     // console.log(main, 'main')
-//     const elementsCreated = Object.keys(notes.elements).map((a) => {
-//         return createElement(a);
-//     });
-//     elementsCreated.map(el => {
-//         if(el.id === 'div') {
-//             main.appendChild(el)
-//         } else if ( el.id === "header" || "ul") {
-//             const div = getElementById('div')
-//             div.appendChild(el)
-//         } else if ( el.id === "h3") {
-//             const header = getElementById("header")
-//             header.appendChild(el)
-//         } else {
-//             const ul = getElementById("ul")
-//             ul.appendChild(el)
-//         }
-//         console.log(el.id)
-//     });
-//     // console.log(elementsCreated);
-// }; 
-
-// generateHtmlElements(gitHubNotes);
-
-// const generateHtmlElements = () => {
-
-// }
-
-
-
 const main = document.createElement('main');
+main.classList.add("main");
 const header = document.createElement('header');
+header.classList.add("main-header");
 
-header.innerHTML = "<h3>Apuntes GitHub<h3>";
+header.innerHTML = "<h1>Apuntes<h1>";
 main.appendChild(header);
 document.body.appendChild(main);
 
-const list = document.createElement('ol');
-const listElement1 = document.createElement ('li');
-const listElement2 = document.createElement ('li');
-const listElement3 = document.createElement ('li');
+function GitHubComandsGenerator() {
+    const divNotes = document.createElement('div');
+    divNotes.classList.add('div-notes');
 
-list.appendChild(listElement1);
-list.appendChild(listElement2);
-list.appendChild(listElement3);
-
-main.appendChild(list);
-
-function gitHubComandsGenerator() {
     const headerCommands = document.createElement('header');
+    headerCommands.classList.add('header-commands');
 
-    headerCommands.innerHTML = "<h3>github Commands<h3>";
+    headerCommands.innerHTML = "<h3>GitHub Commands<h3>";
 
-    const listCommands = document.createElement('ul')
+    const listCommands = document.createElement('ul');
+    listCommands.classList.add("list");
 
-    GitHubCommands.forEach( El => {
+    const commandsDescriptions = Object.values(GitHubCommandsDescription);
+
+    GitHubCommands.forEach ((el, i) => {
         const listElementCommand = document.createElement('li');
+        listElementCommand.classList.add('list-element');
+        listElementCommand.innerHTML = `${el}: ${commandsDescriptions[i]}`;
         listCommands.appendChild(listElementCommand);
-    })
+    } )
 
-    main.appendChild(listCommands)
+    divNotes.appendChild(listCommands);
+    main.appendChild(divNotes);x
 }
 
-gitHubComandsGenerator();
+GitHubComandsGenerator()
