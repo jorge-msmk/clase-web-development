@@ -1,10 +1,21 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
-body {
-    padding: 3px;
-    color: azure;
-    background-color: blue;
+.main-header{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.main-header > h1 {
+    color: blue;
+    background-color: rgb(30, 193, 193);
+}
+
+h1 {
+    color: crimson;
 }
