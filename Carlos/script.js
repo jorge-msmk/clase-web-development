@@ -1,6 +1,7 @@
 
 
 
+
 let arrExp;
 const ArrExp2 = '';
 
@@ -90,8 +91,9 @@ let gitHubNotes = {
 const main = document.createElement('main');
 const header = document.createElement('header');
 
-header.innerHTML = "<h3>Apuntes GitHub<h3>";
+header.innerHTML = "<h3>apuntes github<h3>";
 main.appendChild(header);
+
 document.body.appendChild(main);
 
 const list = document.createElement('ol');
@@ -105,20 +107,21 @@ list.appendChild(listElement3);
 
 main.appendChild(list);
 
-function GitHubComandsGenerator() {
+function GitHubComandsGenerator(){
     const headerCommands = document.createElement('header');
 
-    headerCommands.innerHTML = "<h3>GitHub Commands<h3>";
+    headerCommands.innerHTML = "<h3>gitHub Commands<h3>";
 
     const listCommands = document.createElement('ul');
 
-    GitHubCommands.forEach( el => {
+    GitHubCommands.forEach(el => {
         const listElementCommand = document.createElement('li');
         listCommands.appendChild(listElementCommand);
     })
 
     main.appendChild(listCommands);
-
 }
-
 GitHubComandsGenerator();
+
+
+

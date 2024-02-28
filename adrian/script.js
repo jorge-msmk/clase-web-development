@@ -1,66 +1,125 @@
 
 
+
 let arrExp;
-const arrExp2 = '';
+const ArrExp2 = '';
 
-arrExp = [ 'hola', 'mundo'];
+arrExp = ['hola', 'mundo'];
 
-console.log (arrExp)
-console.log (arrExp[0], '', arrExp[1]);
-const gitHubComands =["git clone", "git status","git push", "git fetch" ]
-const gitHubComandsDescription = {
-    gitClone: "clonamos el repositorio remoto debe ser el nuestro",
-    gitStatus: "muestra el estado del repositorio de trabajo",
-    gitFetch: "compara mi último comit con el de la rama remota",
+console.log(arrExp);
+
+console.log(arrExp[0], ' ', arrExp[1])
+
+const GitHubCommands = ["git clone", "git status", "git fetch", "git pull", "git push"];
+const GitHubComandsDescription = {
+    gitClone: "Clonamos el repositorio remoto debe ser el nuestro",
+    gitStatus: "Muestra el estado del repositorio de trabajo",
+    gitFetch: "Compara mi último commit con el de la rama remota",
     gitPull: "Trae los cambios desde la rama remota",
-    gitPush: "sube mis cambios a la rama remota"
-
+    gitPush: "Sube mis cambios a la rama remota"
 };
-const gitHubFunctions = [ "fork", "sync", "pull request"];
-const gitHubFunctionsDescription = {
+const GitHubFunctions = ["fork", "sync", "pull request"];
+
+const GitHubFunctionsDescription = {
     fork: "saco una rama desde el repo master",
     sync: "sincroniza mi rama con la rama master",
-    PULLrequest: "solicitud de integración de mi rama a la master"
-}
+    pullRequest: "solicitud de integración de mi rama a la master"
+};
 
-
-let githubNotes = {
+let gitHubNotes = {
     date: new Date(),
-    title: "apuntes de git hub",
-    elements: { 
-        div: "div",
+    title: "Apuntes de git hub",
+    elements: {
+        div: "div6666666",
         header: "header",
         h3: "h3",
-        ul:"ul",
-        li:"li"
+        ul: "ul",
+        li: "li"
     },
     class: [],
-    textElement: {
-        keys: [ gitHubComands, gitHubFunctions],
-        descriptions: [ gitHubComandsDescription, gitHubFunctionsDescription]
-      
-
-        
-       
+    textElements: {
+        keys: [GitHubCommands, GitHubFunctions],
+        descriptions:[GitHubComandsDescription, GitHubFunctionsDescription]
     }
-    
+
 }
 
-console.log(Object.keys(githubNotes.elements));
+// console.log(Object.keys(gitHubNotes.elements));
+// console.log(gitHubNotes.elements);
 
-const createElement = (element) => {
-    document.createElement(element);
-}
-    
-    function generateHtmlElements(notes) {
-        Object.keys(notes.elements). forEach((a) =>{
-            createElement(a)
-        })
-        const main = document.getElementById('main');
-      
+// const createElement = (element) => {
+//     const elementCreated = document.createElement(element);
+//     elementCreated.setAttribute('id', element);
+//     console.log(elementCreated)
+//     return elementCreated;
+// };
 
-};
+// const main = document.getElementById("main");
+// function generateHtmlElements(notes) {
+//     const main = document.getElementsByClassName("main");
+//     // console.log(main, 'main')
+//     const elementsCreated = Object.keys(notes.elements).map((a) => {
+//         return createElement(a);
+//     });
+//     elementsCreated.map(el => {
+//         if(el.id === 'div') {
+//             main.appendChild(el)
+//         } else if ( el.id === "header" || "ul") {
+//             const div = getElementById('div')
+//             div.appendChild(el)
+//         } else if ( el.id === "h3") {
+//             const header = getElementById("header")
+//             header.appendChild(el)
+//         } else {
+//             const ul = getElementById("ul")
+//             ul.appendChild(el)
+//         }
+//         console.log(el.id)
+//     });
+//     // console.log(elementsCreated);
+// }; 
+
+// generateHtmlElements(gitHubNotes);
 
 // const generateHtmlElements = () => {
 
 // }
+
+
+
+const main = document.createElement('main');
+const header = document.createElement('div');
+
+header.innerHTML = "<h3>apuntes de gitHub>";
+main.appendChild(header);
+
+document.body.appendChild(main);
+
+console.log(document.body);
+console.log(document.body.main);
+
+const list = document.createElement('ol');
+const listElement1 = document.createElement('li');
+const listElement2 = document.createElement('li');
+const listElement3 = document.createElement('li');
+
+list.appendChild(listElement1);
+list.appendChild(listElement2);
+list.appendChild(listElement3);
+
+main.appendChild(list);
+
+
+function GitHubCommandsGenerator() {
+    const headerCommands = document.createElement('header')
+    headerCommands.innerHTML = document.createElement('ul');
+    const listCommands = document.createElement('ul');
+    GitHubCommands.forEach( el => {
+        const listElementsCommand = document.createElement('li');
+        listCommands.appendChild(listElementsCommand);
+    })
+    main.appendChild(listCommands)
+
+}
+
+GitHubCommandsGenerator()

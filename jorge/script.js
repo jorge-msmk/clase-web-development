@@ -10,7 +10,7 @@ console.log(arrExp);
 
 console.log(arrExp[0], ' ', arrExp[1])
 
-const GitHubComands = ["git clone", "git status", "git fetch", "git pull", "git push"];
+const GitHubCommands = ["git clone", "git status", "git fetch", "git pull", "git push"];
 const GitHubComandsDescription = {
     gitClone: "Clonamos el repositorio remoto debe ser el nuestro",
     gitStatus: "Muestra el estado del repositorio de trabajo",
@@ -38,7 +38,7 @@ let gitHubNotes = {
     },
     class: [],
     textElements: {
-        keys: [GitHubComands, GitHubFunctions],
+        keys: [GitHubCommands, GitHubFunctions],
         descriptions:[GitHubComandsDescription, GitHubFunctionsDescription]
     }
 
@@ -88,12 +88,37 @@ let gitHubNotes = {
 
 
 const main = document.createElement('main');
-const son = document.createElement('div');
+const header = document.createElement('header');
 
-son.innerHTML = "<h1>Hello world<h1>";
-main.appendChild(son);
-
+header.innerHTML = "<h3>Apuntes github<h3>";
+main.appendChild(header);
 document.body.appendChild(main);
 
-console.log(document.body);
-console.log(document.body.main);
+const list = document.createElement('ol');
+const listElement1 = document.createElement('li');
+const listElement2 = document.createElement('li');
+const listElement3 = document.createElement('li');
+
+list.appendChild(listElement1);
+list.appendChild(listElement2);
+list.appendChild(listElement3);
+
+main.appendChild(list);
+
+function gitHubCommandsGenerator() {
+    const headerCommands = document.createElement('header');
+
+    headerCommands.innerHTML = "<h3>gitHub Commands<h3>";
+
+    const listCommands = document.createElement('ul');
+
+    GitHubCommands.forEach( el => {
+        const listElementCommand = document.createElement('li');
+        listCommands.appendChild(listElementCommand);
+    })
+
+    main.appendChild(listCommands);
+
+}
+
+gitHubCommandsGenerator();
