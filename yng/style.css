@@ -1,5 +1,22 @@
 * {
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}  
+
+.main-header{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+
+}
+
+.main-header > h1 {
+    color: yellow;
+    background-color: black;
+}
+
+h1 {
+    color:red
 }
