@@ -1,17 +1,7 @@
 
 
-
-let arrExp;
-const ArrExp2 = '';
-
-arrExp = ['hola', 'mundo'];
-
-console.log(arrExp);
-
-console.log(arrExp[0], ' ', arrExp[1])
-
 const GitHubCommands = ["git clone", "git status", "git fetch", "git pull", "git push"];
-const GitHubComandsDescription = {
+const GitHubCommandsDescription = {
     gitClone: "Clonamos el repositorio remoto debe ser el nuestro",
     gitStatus: "Muestra el estado del repositorio de trabajo",
     gitFetch: "Compara mi último commit con el de la rama remota",
@@ -26,100 +16,41 @@ const GitHubFunctionsDescription = {
     pullRequest: "solicitud de integración de mi rama a la master"
 };
 
-let gitHubNotes = {
-    date: new Date(),
-    title: "Apuntes de git hub",
-    elements: {
-        div: "div6666666",
-        header: "header",
-        h3: "h3",
-        ul: "ul",
-        li: "li"
-    },
-    class: [],
-    textElements: {
-        keys: [GitHubCommands, GitHubFunctions],
-        descriptions:[GitHubComandsDescription, GitHubFunctionsDescription]
-    }
-
-}
-
-// console.log(Object.keys(gitHubNotes.elements));
-// console.log(gitHubNotes.elements);
-
-// const createElement = (element) => {
-//     const elementCreated = document.createElement(element);
-//     elementCreated.setAttribute('id', element);
-//     console.log(elementCreated)
-//     return elementCreated;
-// };
-
-// const main = document.getElementById("main");
-// function generateHtmlElements(notes) {
-//     const main = document.getElementsByClassName("main");
-//     // console.log(main, 'main')
-//     const elementsCreated = Object.keys(notes.elements).map((a) => {
-//         return createElement(a);
-//     });
-//     elementsCreated.map(el => {
-//         if(el.id === 'div') {
-//             main.appendChild(el)
-//         } else if ( el.id === "header" || "ul") {
-//             const div = getElementById('div')
-//             div.appendChild(el)
-//         } else if ( el.id === "h3") {
-//             const header = getElementById("header")
-//             header.appendChild(el)
-//         } else {
-//             const ul = getElementById("ul")
-//             ul.appendChild(el)
-//         }
-//         console.log(el.id)
-//     });
-//     // console.log(elementsCreated);
-// }; 
-
-// generateHtmlElements(gitHubNotes);
-
-// const generateHtmlElements = () => {
-
-// }
-
 
 
 const main = document.createElement('main');
+main.classList.add("main");
 const header = document.createElement('div');
 
-header.innerHTML = "<h3>apuntes de gitHub>";
+header.innerHTML = "<h1>apuntes</h1>";
 main.appendChild(header);
 
 document.body.appendChild(main);
 
-console.log(document.body);
-console.log(document.body.main);
-
-const list = document.createElement('ol');
-const listElement1 = document.createElement('li');
-const listElement2 = document.createElement('li');
-const listElement3 = document.createElement('li');
-
-list.appendChild(listElement1);
-list.appendChild(listElement2);
-list.appendChild(listElement3);
-
-main.appendChild(list);
 
 
 function GitHubCommandsGenerator() {
-    const headerCommands = document.createElement('header')
-    headerCommands.innerHTML = document.createElement('ul');
+    const divNotes = document.createElement('div');
+    divNotes.classList.add("div-notes")
+    const headerCommands = document.createElement('header');
+    headerCommands.classList.add('header-commands')
+    const commandsDescription = Object.values(GitHubCommandsDescription);
+
+    headerCommands.innerHTML = "<h3>apuntes de gitHub</h3>";
+
     const listCommands = document.createElement('ul');
-    GitHubCommands.forEach( el => {
+
+    GitHubCommands.forEach( (el,i) => {
         const listElementsCommand = document.createElement('li');
+        listElementsCommand.innerHTML = `${el}: ${commandsDescription[i]}`;
         listCommands.appendChild(listElementsCommand);
     })
-    main.appendChild(listCommands)
-
+    divNotes.appendChild(headerCommands)
+    divNotes.appendChild(listCommands)
+    main.appendChild(divNotes)
 }
 
 GitHubCommandsGenerator()
+
+
+function GitHubFunctionsGenerator() {}
