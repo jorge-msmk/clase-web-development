@@ -57,7 +57,6 @@ console.log(gitHubNotes.elements);
 
 const createElement = (element) => {
     document.createElement("div");
-
 };
 
 function generateHtmlElements (notes) {
