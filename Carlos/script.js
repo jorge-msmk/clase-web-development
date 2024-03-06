@@ -47,5 +47,5 @@ headerCommands.classList.add('header-Commands');
 }
 GitHubComandsGenerator();
 
-
+function GitHubFunctionsGenerator() {}
 
