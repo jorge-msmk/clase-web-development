@@ -2,11 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
-.main-header {
+.main-header{
     display: flex;
     justify-content: center;
     margin: 1rem;
@@ -14,9 +13,9 @@
 
 .main-header > h1 {
     color: blue;
-    background-color:beige;
+    background-color: rgb(30, 193, 193);
 }
 
 h1 {
-    color:red;
+    color: crimson;
 }

@@ -1,15 +1,3 @@
-
-
-
-let arrExp;
-const ArrExp2 = '';
-
-arrExp = ['hola', 'mundo'];
-
-console.log(arrExp);
-
-console.log(arrExp[0], ' ', arrExp[1])
-
 const GitHubCommands = ["git clone", "git status", "git fetch", "git pull", "git push"];
 const GitHubCommandsDescription = {
     gitClone: "Clonamos el repositorio remoto debe ser el nuestro",
@@ -27,29 +15,41 @@ const GitHubFunctionsDescription = {
 };
 
 const main = document.createElement('main');
+main.classList.add("main");
 const header = document.createElement('header');
+header.classList.add("main-header")
 
-header.innerHTML = "<h3>Apuntes GitHub<h3>";
+header.innerHTML = "<h1>Apuntes github<h1>";
 main.appendChild(header);
+
 document.body.appendChild(main);
 
+function gitHubComandsGenerator() {
 
-function GitHubCommandsGenerator() {
+    const divNotes = document.createElement("div");
+    divNotes.classList.add("div-Notes")
     const headerCommands = document.createElement('header');
 
-    headerCommands.innerHTML = "<h3>gitHub Commands</h3>";
+    headerCommands.innerHTML = "<h3> gitHub Commands<h3>";
 
-    const listCommands = document.createElement('ul');
+    const listCommands = document.createElement("ul");
 
     const commandsDescription = Object.values(GitHubCommandsDescription);
 
     GitHubCommands.forEach((el, i) => {
-        const listElementCommand = document.createElement('li');
-        listElementCommand.innerHTML = `${el}: ${commandsDescription[i]}`;
-        listCommands.appendChild(listElementCommand);
+        const listElementsCommands = document.createElement("li");
+        listElementsCommands,classList.add("list-element")
+        listElementsCommands.innerHTML = `${el}: ${commandsDescription[i]}`;
+        listCommands.appendChild(listElementsCommands);
     })
 
-    main.appendChild(listCommands);
+    divNotes.appendChild(headerCommands)
+    divNotes.appendChild(listCommands)
+    main.appendChild(divNotes)
+
 }
 
-GitHubCommandsGenerator();
+gitHubComandsGenerator()
+
+
+function GitHubFunctionsGenerator () {}
