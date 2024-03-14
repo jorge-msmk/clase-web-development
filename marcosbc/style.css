@@ -6,8 +6,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .main-header {
@@ -20,6 +19,9 @@ body {
     color: blue;
     background-color:beige;
     font-size: 100px;
+    text-decoration: underline;
+    opacity: 0;
+    animation: aparecerPorArriba 3s forwards;
 }
 
 h1 {
@@ -28,22 +30,28 @@ h1 {
     margin: 1rem;
     color:red;
     background-color:beige;
+    opacity: 0;
+    animation: aparecerPorArriba 3s forwards;
 }
 
 div {
     margin: 20px;
     padding: 10px;
-    border: 2.5px solid #ff0000;
+    border: 5px solid #ff0000;
     background-color: #ffffff;
     color: #000000;
+    opacity: 0;
+    animation: aparecerPorIzquierda 5s forwards;
 }
 
 div header {
     margin-bottom: 10px;
 }
 
-div header h3 {
+div header h2 {
     color: gray;
+    background-color:beige;
+    text-decoration: underline;
 }
 
 div ul,
@@ -55,4 +63,26 @@ div ol {
 div ul li,
 div ol li {
     line-height: 2;
+}
+
+@keyframes aparecerPorIzquierda {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aparecerPorArriba {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
