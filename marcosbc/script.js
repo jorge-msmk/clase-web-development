@@ -1,18 +1,37 @@
 
-const GitHubCommands = ["git clone", "git status", "git fetch", "git pull", "git push"];
+const GitHubCommands = ["git clone", "git status", "git fetch", "git pull", "git push", "git init", "git branch", "git checkout [nombre rama]", "git checkout -b [nombre rama]", "git branch [nombre rama]", "git add [path/nombre-archivo]", "git add .", "git commit -m 'mensaje'", "git config --global user.name 'FIRST_NAME LAST_NAME'", "git config --global user.email 'email@email.com'"];
 const GitHubCommandsDescription = {
-    gitClone: "Clonamos el repositorio remoto debe ser el nuestro",
-    gitStatus: "Muestra el estado del repositorio de trabajo",
-    gitFetch: "Compara mi último commit con el de la rama remota",
-    gitPull: "Trae los cambios desde la rama remota",
-    gitPush: "Sube mis cambios a la rama remota"
+    gitClone: "clonamos el repositorio remoto debe ser el nuestro",
+    gitStatus: "muestra el estado del repositorio de trabajo",
+    gitFetch: "compara mi último commit con el de la rama remota",
+    gitPull: "trae los cambios desde la rama remota",
+    gitPush: "sube mis cambios a la rama remota",
+    gitInit: "inicializar repositorio git",
+    gitBranch: "listado ramas",
+    gitCheckout: "cambiar rama",
+    gitCheckout2: "crear rama y cambiarse a ella",
+    gitBranch2: "crear rama",
+    gitAdd: "añadir al stage (limbo) la carpeta",
+    gitAdd2: "añadir al stage todo",
+    gitCommit: "perpetrar los cambios para que haya seguimiento",
+    gitConfig: "configurar user name",
+    gitConfig2: "configurar email"
 };
 
-const GitHubFunctions = ["fork", "sync", "pull request"];
+const GitHubFunctions = ["fork", "sync", "pull request", "cd", "cd ..", "cd 'nombre directorio'", "dir", "mkdir", "cls", "vs -v", "git -v", "node -v"];
 const GitHubFunctionsDescription = {
     fork: "saco una rama desde el repo master",
     sync: "sincroniza mi rama con la rama master",
-    pullRequest: "solicitud de integración de mi rama a la master"
+    pullRequest: "solicitud de integración de mi rama a la master",
+    cd: "moverse entre carpetas",
+    cd2: "moverse a directorio madre",
+    cd3: "moverse a directorio hija",
+    dir: "muestra los directorios hijos",
+    mkdir: "crear directorio",
+    cls: "limpiar consola",
+    vs: "versión visual studio",
+    git: "versión git",
+    node: "versión node"
 };
 
 const main = document.createElement('main');
@@ -31,7 +50,7 @@ function GitHubComandsGenerator() {
 
     const headerCommands = document.createElement('header');
     headerCommands.classList.add('header-Commands');
-    headerCommands.innerHTML = "<h3>GitHub Commands<h3>";
+    headerCommands.innerHTML = "<h2>GitHub Commands</strong><h2>";
 
     const listCommands = document.createElement('ul');
     listCommands.classList.add("list");
@@ -40,7 +59,7 @@ function GitHubComandsGenerator() {
 
     GitHubCommands.forEach((el, i) => {
         const listElementCommand = document.createElement('li');
-        listElementCommand.innerHTML = `${el}: ${commandsDescriptions[i]}}`;
+        listElementCommand.innerHTML = `<strong>${el}:</strong> ${commandsDescriptions[i]}.`;
         listCommands.appendChild(listElementCommand);
     })
 
@@ -52,5 +71,28 @@ function GitHubComandsGenerator() {
 
 GitHubComandsGenerator();
 
+function GitHubFunctionsGenerator(){
+    const divNotes = document.createElement('div');
+    divNotes.classList.add('divNotes');
 
-function GitHubFunctionsGenerator(){}
+    const headerFunctions = document.createElement('header');
+    headerFunctions.classList.add('header-Functions');
+    headerFunctions.innerHTML = "<h2>GitHub Functions<h2>";
+
+    const listFunctions = document.createElement('ul');
+    listFunctions.classList.add("list");
+
+    const functionsDescriptions = Object.values(GitHubFunctionsDescription);
+
+    GitHubFunctions.forEach((el, i) => {
+        const listElementFunction = document.createElement('li');
+        listElementFunction.innerHTML = `<strong>${el}:</strong> ${functionsDescriptions[i]}.`;
+        listFunctions.appendChild(listElementFunction);
+    })
+
+    divNotes.appendChild(headerFunctions);
+    divNotes.appendChild(listFunctions);
+    main.appendChild(divNotes);
+}
+
+GitHubFunctionsGenerator();
