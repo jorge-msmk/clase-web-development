@@ -6,6 +6,10 @@ const GitHubCommandsDescription = {
     gitFetch: "Compara mi último commit con el de la rama remota",
     gitPull: "Trae los cambios desde la rama remota",
     gitPush: "Sube mis cambios a la rama remota"
+    pueba
+    git init: "inicializar repositorio git",
+    git status: "comprobar estado del repositorio",
+    git branch: "listados ramas",
 };
 const GitHubFunctions = ["fork", "sync", "pull request"];
 const GitHubFunctionsDescription = {
