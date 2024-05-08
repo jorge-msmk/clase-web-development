@@ -1,124 +1,63 @@
+// Crear un div para contener todos los párrafos
+const divContenido = document.createElement('div');
+divContenido.id = 'contenido';
 
+// Función para agregar un párrafo al div contenido
+function agregarParrafo(parent, titulo, contenido) {
+    const parrafo = document.createElement('p');
+    parrafo.innerText = `${titulo}\n\n${contenido}`;
+    parent.appendChild(parrafo);
+}
 
-
-let arrExp;
-const ArrExp2 = '';
-
-arrExp = ['hola', 'mundo'];
-
-console.log(arrExp);
-
-console.log(arrExp[0], ' ', arrExp[1])
-
-const GitHubCommands = ["git clone", "git status", "git fetch", "git pull", "git push"];
-const GitHubComandsDescription = {
+// Información de GitHub Commands
+const gitCommands = {
     gitClone: "Clonamos el repositorio remoto debe ser el nuestro",
     gitStatus: "Muestra el estado del repositorio de trabajo",
     gitFetch: "Compara mi último commit con el de la rama remota",
     gitPull: "Trae los cambios desde la rama remota",
     gitPush: "Sube mis cambios a la rama remota"
 };
-const GitHubFunctions = ["fork", "sync", "pull request"];
 
-const GitHubFunctionsDescription = {
-    fork: "saco una rama desde el repo master",
-    sync: "sincroniza mi rama con la rama master",
-    pullRequest: "solicitud de integración de mi rama a la master"
+// Información de GitHub Functions
+const gitFunctions = {
+    fork: "Saco una rama desde el repo master",
+    sync: "Sincroniza mi rama con la rama master",
+    pullRequest: "Solicitud de integración de mi rama a la master"
 };
 
-let gitHubNotes = {
-    date: new Date(),
-    title: "Apuntes de git hub",
-    elements: {
-        div: "div6666666",
-        header: "header",
-        h3: "h3",
-        ul: "ul",
-        li: "li"
-    },
-    class: [],
-    textElements: {
-        keys: [GitHubCommands, GitHubFunctions],
-        descriptions:[GitHubComandsDescription, GitHubFunctionsDescription]
-    }
+// Información de Notas de la Consola
+const consoleNotes = {
+    cd: "Moverse entre directorios",
+    cdParent: "Moverse a directorio padre",
+    cdChild: "Moverse a directorio hijo",
+    dir: "Muestra los directorios hijos",
+    mkdir: "Crear directorio",
+    cls: "Limpiar consola",
+    vsVersion: "Versión Visual Studio",
+    gitVersion: "Versión Git",
+    nodeVersion: "Versión Node"
+};
 
-}
+// Información de Notas de Git
+const gitNotes = {
+    gitInit: "Inicializar repositorio git",
+    gitStatus: "Comprobar estado del repositorio",
+    gitBranch: "Listado de ramas",
+    gitCheckout: "Cambiar de rama",
+    gitCheckoutNew: "Crear rama y cambiarse a ella",
+    gitBranchNew: "Crear rama",
+    gitAdd: "Añadir cambios al stage",
+    gitAddAll: "Añadir todos los cambios al stage",
+    gitCommit: "Perpetrar los cambios",
+    gitConfigName: "Configurar nombre de usuario",
+    gitConfigEmail: "Configurar correo electrónico"
+};
 
-// console.log(Object.keys(gitHubNotes.elements));
-// console.log(gitHubNotes.elements);
+// Agregar cada conjunto de información como un párrafo al div contenido
+agregarParrafo(divContenido, 'GitHub Commands', Object.entries(gitCommands).map(([key, value]) => `${key}: ${value}`).join('\n'));
+agregarParrafo(divContenido, 'GitHub Functions', Object.entries(gitFunctions).map(([key, value]) => `${key}: ${value}`).join('\n'));
+agregarParrafo(divContenido, 'Notas de la Consola', Object.entries(consoleNotes).map(([key, value]) => `${key}: ${value}`).join('\n'));
+agregarParrafo(divContenido, 'Notas de Git', Object.entries(gitNotes).map(([key, value]) => `${key}: ${value}`).join('\n'));
 
-// const createElement = (element) => {
-//     const elementCreated = document.createElement(element);
-//     elementCreated.setAttribute('id', element);
-//     console.log(elementCreated)
-//     return elementCreated;
-// };
-
-// const main = document.getElementById("main");
-// function generateHtmlElements(notes) {
-//     const main = document.getElementsByClassName("main");
-//     // console.log(main, 'main')
-//     const elementsCreated = Object.keys(notes.elements).map((a) => {
-//         return createElement(a);
-//     });
-//     elementsCreated.map(el => {
-//         if(el.id === 'div') {
-//             main.appendChild(el)
-//         } else if ( el.id === "header" || "ul") {
-//             const div = getElementById('div')
-//             div.appendChild(el)
-//         } else if ( el.id === "h3") {
-//             const header = getElementById("header")
-//             header.appendChild(el)
-//         } else {
-//             const ul = getElementById("ul")
-//             ul.appendChild(el)
-//         }
-//         console.log(el.id)
-//     });
-//     // console.log(elementsCreated);
-// }; 
-
-// generateHtmlElements(gitHubNotes);
-
-// const generateHtmlElements = () => {
-
-// }
-
-
-
-const main = document.createElement('main');
-const header = document.createElement('header');
-
-header.innerHTML = "<h3>Apuntes GitHub<h3>";
-main.appendChild(header);
-document.body.appendChild(main);
-
-const list = document.createElement('ol');
-const listElement1 = document.createElement('li');
-const listElement2 = document.createElement('li');
-const listElement3 = document.createElement('li');
-
-list.appendChild(listElement1);
-list.appendChild(listElement2);
-list.appendChild(listElement3);
-
-main.appendChild(list);
-
-function GitHubComandsGenerator() {
-    const headerCommands = document.createElement('header');
-
-    headerCommands.innerHTML = "<h3>GitHub Commands<h3>";
-
-    const listCommands = document.createElement('ul');
-
-    GitHubCommands.forEach( el => {
-        const listElementCommand = document.createElement('li');
-        listCommands.appendChild(listElementCommand);
-    })
-
-    main.appendChild(listCommands);
-
-}
-
-GitHubComandsGenerator();
+// Agregar el div contenido al cuerpo del documento
+document.body.appendChild(divContenido);
