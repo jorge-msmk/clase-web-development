@@ -1,18 +1,16 @@
-# notas markdown
+# Notas markdown
 
-
-## tipos de datos
+## Tipos de datos
 - Number
 - Null 
-- Underfined
-- String
-- Array[]
-- Objeto{}
+- Undefined
+- String 
+- Array
+- Objeto
 
-## 3 frameworks principales de fronted
+## 3 Frameworks principales de frontend
 
 - React
-- VUE
-- Angular 
+- VUE 
+- Angular
 
- 
