@@ -1,22 +1,9 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-
+body {
+    background-color: #FFF8DC; /* Color crema para el fondo */
+    text-align: center; /* Todo el texto centrado */
 }
 
-.main-header {
-    display: flex;
-    justify-content: center;
-    margin: 1rem;
-}
-
-.main-header > h1 {
-    color: beige;
-    background-color: blue;
-}
-
-h1 {
-    color:red;
+p {
+    font-weight: bold; /* Títulos en negrita */
+    margin: 20px 0; /* Espaciado entre párrafos */
 }
