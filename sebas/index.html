@@ -7,50 +7,55 @@
     <title>Document</title>
 </head>
 <body>
-    <script src= "./script.js" ></script>
-    <header id="main header">
+    <script src="./script.js"></script>
+    <header id="main-header">
         <h1>Apuntes de Sebas</h1>
     </header>
-    <main>
+    <main id="main" class="main">
+
         <div>
             <header>
-                <h3>Notas Consola</h3>
+                <h3>Resumen curso</h3>
+            </header>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        
+        <div>
+            <header>
+                <h3>Notas consola</h3>
             </header>
             <ol>
-                <li>cd: moverse entre directorios</li>
-                <li>cd..: Moverse a directorio hijo</li>
-                <li>cd "nombre de carpeta": moverse a directorios hijos</li>
-                <li>dir: muestrame los directorio hijas</li>
+                <li>cd: Moverse entre directorios</li>
+                <li>cd .. : Moverse a directorio madre</li>
+                <li>cd "nombre directorio" : Moverse a directorio hija</li>
+                <li>dir: muestra los directorios hijos</li>
                 <li>mkdir: crear directorio</li>
                 <li>cls: limpiar consola</li>
-                <li>vs -v: version visual studio</li>
-                <li>git -v: version git </li>
-                <li>node -v: version node</li>
-
-
-
+                <li>vs -v: versión visual studio</li>
+                <li>git -v: versión git</li>
+                <li>node -v: versión node</li>
+                <li>Añadir más...</li>
             </ol>
         </div>
 
         <div>
-            <header>
+            <header class="header-git">
                 <h3>Notas git</h3>
             </header>
             <ul>
                 <li>git init: inicializar repositorio git</li>
                 <li>git status: comprobar estado del repositorio</li>
-                <li>git brach: listado ramas</li>
+                <li>git branch: listado ramas</li>
                 <li>git checkout [nombre rama]: cambiar rama</li>
                 <li>git checkout -b [nombre rama]: crear rama y cambiarse a ella</li>
                 <li>git branch [nombre rama]: crear rama</li>
                 <li>git add [path/nombre-archivo]: añadir al stage (limbo) la carpeta</li>
-                <li>git add .: añadir al stage todo</li>
-                <li>git commit -m "mensage": perpretar los cambios para que haya seguimiento</li>
-                <li>git config --global user.name "nombre":configurar user name</li>
-                <li>git config --global user.email "email": configurar email</li>
-
-                
-            
+                <li>git add . : añadir al stage todo</li>
+                <li>git commit -m "mensaje": perpetrar los cambios para que haya seguimiento</li>
+                <li>git config --global user.name "FIRST_NAME LAST_NAME": configurar user name</li>
+                <li>git config --global user.email "email@email.com": configurar email</li>
             </ul>
         </div>
 
@@ -60,10 +65,11 @@
             </header>
             <ul>
                 <li></li>
-
             </ul>
         </div>
 
+
     </main>
+
 </body>
-</html> 
+</html>

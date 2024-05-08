@@ -15,4 +15,4 @@
 
 - React
 - VUE
-- Angular
+- Angularñ
