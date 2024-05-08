@@ -1,5 +1,4 @@
 
-
 const GitHubCommands = ["git clone", "git status", "git fetch", "git pull", "git push"];
 const GitHubCommandsDescription = {
     gitClone: "Clonamos el repositorio remoto debe ser el nuestro",
@@ -8,8 +7,8 @@ const GitHubCommandsDescription = {
     gitPull: "Trae los cambios desde la rama remota",
     gitPush: "Sube mis cambios a la rama remota"
 };
-const GitHubFunctions = ["fork", "sync", "pull request"];
 
+const GitHubFunctions = ["fork", "sync", "pull request"];
 const GitHubFunctionsDescription = {
     fork: "saco una rama desde el repo master",
     sync: "sincroniza mi rama con la rama master",
@@ -25,29 +24,33 @@ header.innerHTML = "<h1>Apuntes<h1>";
 main.appendChild(header);
 document.body.appendChild(main);
 
-function GitHubComandsGenerator() {
+function gitHubCommandsGenerator() {
+
     const divNotes = document.createElement('div');
     divNotes.classList.add('div-notes');
 
     const headerCommands = document.createElement('header');
     headerCommands.classList.add('header-commands');
-
-    headerCommands.innerHTML = "<h3>GitHub Commands<h3>";
+    headerCommands.innerHTML = "<h3>gitHub Commands<h3>";
 
     const listCommands = document.createElement('ul');
     listCommands.classList.add("list");
 
     const commandsDescriptions = Object.values(GitHubCommandsDescription);
 
-    GitHubCommands.forEach ((el, i) => {
+    GitHubCommands.forEach((el, i) => {
         const listElementCommand = document.createElement('li');
         listElementCommand.classList.add('list-element');
         listElementCommand.innerHTML = `${el}: ${commandsDescriptions[i]}`;
         listCommands.appendChild(listElementCommand);
-    } )
+    })
 
+    divNotes.appendChild(headerCommands);
     divNotes.appendChild(listCommands);
-    main.appendChild(divNotes);x
+    main.appendChild(divNotes);
 }
 
-GitHubComandsGenerator()
+gitHubCommandsGenerator();
+
+
+function gitHubFunctionsGenerator() {}
