@@ -1,20 +1,65 @@
-* {
-margin: 0;
-padding: o;
-box-sizing: border-box;
-font-family:'Gill Sans' , 'Gill san MT' , Calibri, 'Trebuchet MS', sans-serif;
+/* Estilo para el cuerpo del documento */
+body {
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+    margin: 0; /* Eliminar margen por defecto */
+    padding: 0; /* Eliminar relleno por defecto */
+    background-color: #f5f5f5; /* Color de fondo */
+}
 
+/* Estilo para el encabezado */
+header {
+    background-color: #333; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 20px; /* Espacio interior */
+    text-align: center; /* Alineación del texto */
 }
-.main-header{
-    display: flex;
-    justify-content: center;
-    margin: 1rem;
-}
-.main-header > h1 {
-    color: blue;
-    background-color: beige;
 
+/* Estilo para el título del encabezado */
+h1 {
+    margin: 0; /* Eliminar margen */
+    font-size: 28px; /* Tamaño de fuente */
 }
-h1{
-    color: red;
+
+/* Estilo para las secciones */
+div {
+    margin: 20px; /* Margen exterior */
+    background-color: #fff; /* Color de fondo */
+    border-radius: 5px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo para el título de la sección */
+h3 {
+    background-color: #333; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    padding: 10px; /* Espacio interior */
+    margin: 0; /* Eliminar margen */
+    border-top-left-radius: 5px; /* Borde superior izquierdo redondeado */
+    border-top-right-radius: 5px; /* Borde superior derecho redondeado */
+}
+
+/* Estilo para la lista de elementos */
+ul, ol {
+    list-style-type: none; /* Eliminar viñetas */
+    padding: 0; /* Eliminar relleno */
+    margin: 0; /* Eliminar margen */
+}
+
+/* Estilo para los elementos de la lista */
+li {
+    padding: 10px; /* Espacio interior */
+    border-bottom: 1px solid #eee; /* Borde inferior */
+}
+
+/* Estilo para los elementos pares de la lista */
+li:nth-child(even) {
+    background-color: #f9f9f9; /* Color de fondo */
+}
+
+/* Estilo para el texto del comando o nota */
+li::before {
+    content: '>>'; /* Símbolo antes del texto */
+    margin-right: 5px; /* Margen derecho */
+    color: #333; /* Color del símbolo */
+    font-weight: bold; /* Texto en negrita */
 }
